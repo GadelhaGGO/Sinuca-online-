@@ -3,31 +3,30 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Campeonato de Sinuca on-line</title>
+  <title>Campeonato de Sinuca On-line</title>
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
       color: #fff;
-      background: url('https://i.pinimg.com/736x/88/83/08/8883082544d51b32386bc36c38b5fa1d.jpg') no-repeat center center fixed;
+      background: url('https://i.pinimg.com/736x/81/b1/0a/81b10af405726b7e4293a3438160638c.jpg') no-repeat center center fixed;
       background-size: cover;
     }
     .container {
-      background-color: rgba(0, 0, 0, 0.7);
+      background-color: rgba(0, 0, 0, 0.8);
       padding: 30px;
-      max-width: 900px;
+      max-width: 1000px;
       margin: 40px auto;
       border-radius: 15px;
     }
-    h1 {
+    h1, h2 {
       text-align: center;
-      margin-bottom: 30px;
       color: #00ffcc;
     }
     table {
       width: 100%;
       border-collapse: collapse;
-      margin-bottom: 30px;
+      margin: 20px 0;
     }
     th, td {
       border: 1px solid #ddd;
@@ -41,7 +40,7 @@
     .zap-button {
       display: block;
       width: fit-content;
-      margin: 0 auto;
+      margin: 30px auto 0;
       padding: 12px 24px;
       font-size: 16px;
       font-weight: bold;
@@ -58,57 +57,85 @@
 </head>
 <body>
   <div class="container">
-    <h1>Campeonato de Sinuca on-line</h1>
-               <h1>R$10,00</h1>
+    <h1>Campeonato de Sinuca On-line</h1>
+    <h5 style="text-align: center;">inscrição R$ 10,00 - regras na descrição do grupo</h5>
+
     <h2>Classificação</h2>
     <table>
-      <tr>
-        <th>Jogador</th>
-        <th>Pontos</th>
-      </tr>
-     <tr><td>Jogador</td><td>0</td></tr>
-<tr><td>Jogador</td><td>0</td></tr>
-      <tr><td>Jogador</td><td>0</td></tr>
-<tr><td>Jogador</td><td>0</td></tr>
-      <tr><td>Jogador</td><td>0</td></tr>
-<tr><td>Jogador</td><td>0</td></tr>
-      <tr><td>Jogador</td><td>0</td></tr>
-<tr><td>Jogador</td><td>0</td></tr>
+      <thead>
+        <tr><th>Jogador</th><th>Pontos</th></tr>
+      </thead>
+      <tbody id="classificacao"></tbody>
     </table>
 
-    <h2>Fase Liga (com mira) 3 jogos aleatórios - 2 jogos por oponente</h2>
+    <h2>Fase Liga (Resultados)</h2>
+    <table id="tabela-resultados">
+      <thead>
+        <tr><th>Jogador A</th><th>Placar</th><th>Jogador B</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Gadelha</td><td>2 x 0</td><td>Mãe</td></tr>
+        <tr><td>Mãe</td><td>0 x 2</td><td>Ingrid</td></tr>
+        <tr><td>Ingrid</td><td>2 x 2</td><td>Ryan</td></tr>
+        <tr><td>Gadelha</td><td>2 x 1</td><td>Rafael</td></tr>
+        <tr><td>Wil</td><td>1 x 0</td><td>JJ</td></tr>
+        <tr><td>Charle</td><td>1 x 1</td><td>Mike</td></tr>
+        <tr><td>Ryan</td><td>1 x 0</td><td>Pedro</td></tr>
+        <tr><td>Lucas</td><td>1 x 1</td><td>Mãe</td></tr>
+        <tr><td>João</td><td>0 x 2</td><td>Ingrid</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Mata-Mata</h2>
     <table>
-      <tr>
-        <th>Jogador A</th>
-        <th>Placar</th>
-        <th>Jogador B</th>
-      </tr>
-    <tr><td>Jogador</td><td>x</td><td>Jogador</td></tr>
-<tr><td>Jogador</td><td>x</td><td>Jogador</td></tr>
-<tr><td>Jogador</td><td>x</td><td>Jogador</td></tr>
-<tr><td>Jogador</td><td>x</td><td>Jogador</td></tr>
-<tr><td>Jogador</td><td>x</td><td>Jogador</td></tr>
-<tr><td>Jogador</td><td>x</td><td>Jogador</td></tr>
- <tr><td>Jogador</td><td>x</td><td>Jogador</td></tr>
-<tr><td>Jogador</td><td>x</td><td>Jogador</td></tr>
-<tr><td>Jogador</td><td>x</td><td>Jogador</td></tr>
-<tr><td>Jogador</td><td>x</td><td>Jogador</td></tr>
-<tr><td>Jogador</td><td>x</td><td>Jogador</td></tr>
-<tr><td>Jogador</td><td>x</td><td>Jogador</td></tr>
-<tr><td>Jogador</td><td>x</td><td>Jogador</td></tr>
+      <thead>
+        <tr><th>Fase</th><th>Resultado</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Semifinal</td><td>Gadelha 1 x 0 Mãe</td></tr>
+        <tr><td>Semifinal</td><td>Ryan 1 x 0 Ingrid</td></tr>
+        <tr><td>Final</td><td>Gadelha 0 x 1 Ryan</td></tr>
+      </tbody>
     </table>
 
-    <h2>Mata-Mata (sem mira) até 15 players 4 semifinalistas</h2>
-    <table>
-      <tr><th>Fase</th><th>Placar</th></tr>
-      <tr><td> 1º colocado  vs  4º colocado</td><td>Semifinal</td></tr>
-      <tr><td>2º colocado  vs  3º colocado</td><td>Semifinal</td></tr>
-      <tr><td>Jogador  vs  Jogador</td><td>Final</td></tr>
-    </table>
+    <h2>Campeão: <strong>RYAN 🏆 R$ 50,00</strong></h2>
 
-    <h2>Campeão: <strong>Jogador 🏆 R$50,00</strong></h2>
-
-    <a class="zap-button" href="https://chat.whatsapp.com/EmdqlTa5bU5B72X3NSX5pM" target="_blank">Entrar no grupo do WhatsApp</a>
+    <a class="zap-button" href="https://wa.me/5581999999999" target="_blank">Entrar no grupo do WhatsApp</a>
   </div>
+
+  <script>
+    const pontos = {};
+
+    const linhas = document.querySelectorAll('#tabela-resultados tbody tr');
+    linhas.forEach(linha => {
+      const jogadorA = linha.cells[0].textContent.trim();
+      const placar = linha.cells[1].textContent.trim();
+      const jogadorB = linha.cells[2].textContent.trim();
+
+      const match = placar.match(/(\d+)\s*x\s*(\d+)/);
+      if (!match) return;
+      const pa = parseInt(match[1], 10);
+      const pb = parseInt(match[2], 10);
+
+      if (!(jogadorA in pontos)) pontos[jogadorA] = 0;
+      if (!(jogadorB in pontos)) pontos[jogadorB] = 0;
+
+      if (pa > pb) pontos[jogadorA] += 3;
+      else if (pa < pb) pontos[jogadorB] += 3;
+      else {
+        pontos[jogadorA] += 1;
+        pontos[jogadorB] += 1;
+      }
+    });
+
+    const classTable = document.getElementById('classificacao');
+    Object.entries(pontos)
+      .sort((a, b) => b[1] - a[1])
+      .forEach(([jogador, pontos]) => {
+        const row = document.createElement('tr');
+        row.innerHTML = `<td>${jogador}</td><td>${pontos}</td>`;
+        classTable.appendChild(row);
+      });
+  </script>
 </body>
 </html>
