@@ -5,7 +5,38 @@
   <title>Torneio em Pirâmide</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    body { font-family: Arial, sans-serif; background: #f4f4f4; }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-image: url('https://i.pinimg.com/736x/55/49/33/55493328826135625b1bd25a76ff7b71.jpg'); /* Coloque o link da sua imagem aqui */
+      background-size: cover;       /* Faz a imagem cobrir toda a tela */
+      background-position: center;  /* Centraliza a imagem */
+      background-repeat: no-repeat; /* Não repete a imagem */
+    }
+
+    .top-left {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      background-color: rgba(255, 255, 255, 0.7); /* Fundo semi-transparente para facilitar leitura */
+      padding: 5px 10px;
+      border-radius: 5px;
+      z-index: 1000;
+    }
+
+    .top-left a {
+      margin-left: 5px;
+      text-decoration: none;
+      color: blue;
+    }
+
+    .top-left a:hover {
+      text-decoration: underline;
+    }
+
     .piramide { text-align: center; margin-top: 30px; }
     .linha {
       display: flex;
@@ -92,10 +123,12 @@
   </style>
 </head>
 <body>
-   <div class="top-left">
-        Início : <br>
-        <a href="sala-de-trofeus.html">Sala de troféus</a>
-   </div>
+  
+  <div class="top-left">
+    Início : 09/06/25<br>
+    <a href="sala-de-trofeus.html">Sala de troféus</a>
+  </div>
+
   <div class="piramide">
     <div class="trofeu">🏆</div>
     <div class="linha">
@@ -179,7 +212,7 @@
   </div>
   
   <div class="rodape">
-     inscrição R$5,00
+    inscrição R$5,00
   </div>
 </body>
-  </html>
+        </html
