@@ -52,14 +52,30 @@
       box-sizing: border-box;
     }
     .trofeu { font-size: 48px; color: gold; margin-top: 20px; }
+    .whatsapp-btn {
+      display: inline-block;
+      margin: 30px auto;
+      padding: 12px 24px;
+      background-color: #25D366;
+      color: white;
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: bold;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.3s;
+    }
+    .whatsapp-btn:hover {
+      background-color: #128C7E;
+    }
     @media (max-width: 600px) {
       .piramide { margin-top: 10px; }
       .jogador-bloco { width: 72px; }
       .foto-link { width: 44px; height: 44px; }
       .jogador { width: 68px; font-size: 12px; padding: 5px; }
       .linha { gap: 8px; }
+      .whatsapp-btn { padding: 10px 20px; font-size: 14px; }
     }
-.rodape {
+    .rodape {
       position: fixed;
       bottom: 10px;
       right: 10px;
@@ -73,7 +89,6 @@
       color: #000;
       z-index: 1000;
     }
-
   </style>
 </head>
 <body>
@@ -84,7 +99,7 @@
         <a href="#" class="foto-link" title="Foto do Finalista">
           <img src="https://i.pinimg.com/736x/14/46/e4/1446e42ce695bf0e74f0a32ba2b1bf29.jpg" alt="Foto do Finalista">
         </a>
-        <div class="jogador">Finalista</div>
+        <div class="jogador">Ryan</div>
       </div>
     </div>
     <div class="linha">
@@ -92,13 +107,13 @@
         <a href="#" class="foto-link" title="Foto do Semi 1">
           <img src="https://i.pinimg.com/736x/80/05/58/8005582e8b79a9c1e8fc8d24d79e0fc6.jpg" alt="Foto do Semi 1">
         </a>
-        <div class="jogador">Semi 1</div>
+        <div class="jogador">João<br> 1</div>
       </div>
       <div class="jogador-bloco">
         <a href="#" class="foto-link" title="Foto do Semi 2">
           <img src="https://i.pinimg.com/736x/80/05/58/8005582e8b79a9c1e8fc8d24d79e0fc6.jpg" alt="Foto do Semi 2">
         </a>
-        <div class="jogador">Semi 2</div>
+        <div class="jogador">Ryan<br>2</div>
       </div>
     </div>
     <div class="linha">
@@ -106,25 +121,25 @@
         <a href="#" class="foto-link" title="Foto do Quartas 1">
           <img src="https://i.pinimg.com/736x/80/05/58/8005582e8b79a9c1e8fc8d24d79e0fc6.jpg" alt="Foto do Quartas 1">
         </a>
-        <div class="jogador">Quartas 1</div>
+        <div class="jogador">W.O</div>
       </div>
       <div class="jogador-bloco">
         <a href="#" class="foto-link" title="Foto do Quartas 2">
           <img src="https://i.pinimg.com/736x/80/05/58/8005582e8b79a9c1e8fc8d24d79e0fc6.jpg" alt="Foto do Quartas 2">
         </a>
-        <div class="jogador">Quartas 2</div>
+        <div class="jogador">Joao<br>2</div>
       </div>
       <div class="jogador-bloco">
         <a href="#" class="foto-link" title="Foto do Quartas 3">
           <img src="https://i.pinimg.com/736x/80/05/58/8005582e8b79a9c1e8fc8d24d79e0fc6.jpg" alt="Foto do Quartas 3">
         </a>
-        <div class="jogador">Quartas 3</div>
+        <div class="jogador">Rafael<br>1</div>
       </div>
       <div class="jogador-bloco">
         <a href="#" class="foto-link" title="Foto do Quartas 4">
           <img src="https://i.pinimg.com/736x/80/05/58/8005582e8b79a9c1e8fc8d24d79e0fc6.jpg" alt="Foto do Quartas 4">
         </a>
-        <div class="jogador">Quartas 4</div>
+        <div class="jogador">Ryan<br>2</div>
       </div>
     </div>
     <div class="linha">
@@ -150,36 +165,17 @@
         <a href="#" class="foto-link" title="Foto do Jogador 4">
           <img src="https://i.pinimg.com/736x/80/05/58/8005582e8b79a9c1e8fc8d24d79e0fc6.jpg" alt="Foto do Jogador 4">
         </a>
-        <div class="jogador">Jogador 4</div>
-      </div>
-      <div class="jogador-bloco">
-        <a href="#" class="foto-link" title="Foto do Jogador 5">
-          <img src="https://i.pinimg.com/736x/80/05/58/8005582e8b79a9c1e8fc8d24d79e0fc6.jpg" alt="Foto do Jogador 5">
-        </a>
-        <div class="jogador">Jogador 5</div>
-      </div>
-      <div class="jogador-bloco">
-        <a href="#" class="foto-link" title="Foto do Jogador 6">
-          <img src="https://i.pinimg.com/736x/80/05/58/8005582e8b79a9c1e8fc8d24d79e0fc6.jpg" alt="Foto do Jogador 6">
-        </a>
-        <div class="jogador">Jogador 6</div>
-      </div>
-      <div class="jogador-bloco">
-        <a href="#" class="foto-link" title="Foto do Jogador 7">
-          <img src="https://i.pinimg.com/736x/80/05/58/8005582e8b79a9c1e8fc8d24d79e0fc6.jpg" alt="Foto do Jogador 7">
-        </a>
-        <div class="jogador">Jogador 7</div>
-      </div>
-      <div class="jogador-bloco">
-        <a href="#" class="foto-link" title="Foto do Jogador 8">
-          <img src="https://i.pinimg.com/736x/80/05/58/8005582e8b79a9c1e8fc8d24d79e0fc6.jpg" alt="Foto do Jogador 8">
-        </a>
-        <div class="jogador">Jogador 8</div>
+        <div class="jogador">Gadelha<br>vs<br>Ryan<br>1x2</div>
       </div>
     </div>
+    
+    <a href="https://chat.whatsapp.com/EmdqlTa5bU5B72X3NSX5pM" class="whatsapp-btn" target="_blank">
+      Entrar no Grupo do WhatsApp
+    </a>
   </div>
-<div class="rodape">
-    Gadelha Sinuca
+  
+  <div class="rodape">
+     inscrição R$5,00
   </div>
 </body>
-</html>
+  </html>
