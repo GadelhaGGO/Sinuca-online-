@@ -1,141 +1,185 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Campeonato de Sinuca On-line</title>
+  <meta charset="UTF-8">
+  <title>Torneio em Pirâmide</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      color: #fff;
-      background: url('https://i.pinimg.com/736x/81/b1/0a/81b10af405726b7e4293a3438160638c.jpg') no-repeat center center fixed;
-      background-size: cover;
+    body { font-family: Arial, sans-serif; background: #f4f4f4; }
+    .piramide { text-align: center; margin-top: 30px; }
+    .linha {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin: 16px 0;
+      flex-wrap: wrap;
     }
-    .container {
-      background-color: rgba(0, 0, 0, 0.8);
-      padding: 30px;
-      max-width: 1000px;
-      margin: 40px auto;
-      border-radius: 15px;
+    .jogador-bloco {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 90px;
     }
-    h1, h2 {
-      text-align: center;
-      color: #00ffcc;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 20px 0;
-    }
-    th, td {
-      border: 1px solid #ddd;
-      padding: 10px;
-      text-align: center;
-      background-color: #222;
-    }
-    th {
-      background-color: #444;
-    }
-    .zap-button {
-      display: block;
-      width: fit-content;
-      margin: 30px auto 0;
-      padding: 12px 24px;
-      font-size: 16px;
-      font-weight: bold;
-      background-color: #25D366;
-      color: white;
-      border: none;
-      border-radius: 8px;
+    .foto-link {
+      width: 56px;
+      height: 56px;
+      background: #ccc;
+      border-radius: 50%;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      border: 2px dashed #aaa;
+      cursor: pointer;
+      box-sizing: border-box;
       text-decoration: none;
     }
-    .zap-button:hover {
-      background-color: #1ebe5d;
+    .foto-link img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      display: block;
     }
+    .jogador {
+      width: 84px;
+      padding: 7px;
+      background: #eee;
+      border-radius: 6px;
+      text-align: center;
+      font-size: 15px;
+      box-sizing: border-box;
+    }
+    .trofeu { font-size: 48px; color: gold; margin-top: 20px; }
+    @media (max-width: 600px) {
+      .piramide { margin-top: 10px; }
+      .jogador-bloco { width: 72px; }
+      .foto-link { width: 44px; height: 44px; }
+      .jogador { width: 68px; font-size: 12px; padding: 5px; }
+      .linha { gap: 8px; }
+    }
+.rodape {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      padding: 10px 15px;
+      background-color: #f1f1f1;
+      text-align: right;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      color: #000;
+      z-index: 1000;
+    }
+
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Campeonato de Sinuca On-line</h1>
-    <h3 style="text-align: center;">inscrição R$ 10,00 - regras na descrição do grupo</h3>
-
-    <h2>Classificação</h2>
-    <table>
-      <thead>
-        <tr><th>Jogador</th><th>Pontos</th></tr>
-      </thead>
-      <tbody id="classificacao"></tbody>
-    </table>
-
-    <h2>Fase Liga (Resultados)</h2>
-    <table id="tabela-resultados">
-      <thead>
-        <tr><th>Jogador A</th><th>Placar</th><th>Jogador B</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>Gadelha</td><td>2 x 0</td><td>Mãe</td></tr>
-        <tr><td>Mãe</td><td>0 x 2</td><td>Ingrid</td></tr>
-        <tr><td>Ingrid</td><td>2 x 2</td><td>Ryan</td></tr>
-        <tr><td>Gadelha</td><td>2 x 1</td><td>Rafael</td></tr>
-        <tr><td>Wil</td><td>1 x 0</td><td>JJ</td></tr>
-        <tr><td>Charle</td><td>1 x 1</td><td>Mike</td></tr>
-        <tr><td>Ryan</td><td>1 x 0</td><td>Pedro</td></tr>
-        <tr><td>Lucas</td><td>1 x 1</td><td>Mãe</td></tr>
-        <tr><td>João</td><td>0 x 2</td><td>Ingrid</td></tr>
-      </tbody>
-    </table>
-
-    <h2>Mata-Mata</h2>
-    <table>
-      <thead>
-        <tr><th>Fase</th><th>Resultado</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>Semifinal</td><td>Gadelha 1 x 0 Mãe</td></tr>
-        <tr><td>Semifinal</td><td>Ryan 1 x 0 Ingrid</td></tr>
-        <tr><td>Final</td><td>Gadelha 0 x 1 Ryan</td></tr>
-      </tbody>
-    </table>
-
-    <h2>Campeão: <strong>RYAN 🏆 R$ 50,00</strong></h2>
-
-    <a class="zap-button" href="https://chat.whatsapp.com/EmdqlTa5bU5B72X3NSX5pM" target="_blank">Entrar no grupo do WhatsApp</a>
+  <div class="piramide">
+    <div class="trofeu">🏆</div>
+    <div class="linha">
+      <div class="jogador-bloco">
+        <a href="#" class="foto-link" title="Foto do Finalista">
+          <img src="https://i.pinimg.com/736x/14/46/e4/1446e42ce695bf0e74f0a32ba2b1bf29.jpg" alt="Foto do Finalista">
+        </a>
+        <div class="jogador">Finalista</div>
+      </div>
+    </div>
+    <div class="linha">
+      <div class="jogador-bloco">
+        <a href="#" class="foto-link" title="Foto do Semi 1">
+          <img src="https://i.pinimg.com/736x/80/05/58/8005582e8b79a9c1e8fc8d24d79e0fc6.jpg" alt="Foto do Semi 1">
+        </a>
+        <div class="jogador">Semi 1</div>
+      </div>
+      <div class="jogador-bloco">
+        <a href="#" class="foto-link" title="Foto do Semi 2">
+          <img src="https://i.pinimg.com/736x/80/05/58/8005582e8b79a9c1e8fc8d24d79e0fc6.jpg" alt="Foto do Semi 2">
+        </a>
+        <div class="jogador">Semi 2</div>
+      </div>
+    </div>
+    <div class="linha">
+      <div class="jogador-bloco">
+        <a href="#" class="foto-link" title="Foto do Quartas 1">
+          <img src="https://i.pinimg.com/736x/80/05/58/8005582e8b79a9c1e8fc8d24d79e0fc6.jpg" alt="Foto do Quartas 1">
+        </a>
+        <div class="jogador">Quartas 1</div>
+      </div>
+      <div class="jogador-bloco">
+        <a href="#" class="foto-link" title="Foto do Quartas 2">
+          <img src="https://i.pinimg.com/736x/80/05/58/8005582e8b79a9c1e8fc8d24d79e0fc6.jpg" alt="Foto do Quartas 2">
+        </a>
+        <div class="jogador">Quartas 2</div>
+      </div>
+      <div class="jogador-bloco">
+        <a href="#" class="foto-link" title="Foto do Quartas 3">
+          <img src="https://i.pinimg.com/736x/80/05/58/8005582e8b79a9c1e8fc8d24d79e0fc6.jpg" alt="Foto do Quartas 3">
+        </a>
+        <div class="jogador">Quartas 3</div>
+      </div>
+      <div class="jogador-bloco">
+        <a href="#" class="foto-link" title="Foto do Quartas 4">
+          <img src="https://i.pinimg.com/736x/80/05/58/8005582e8b79a9c1e8fc8d24d79e0fc6.jpg" alt="Foto do Quartas 4">
+        </a>
+        <div class="jogador">Quartas 4</div>
+      </div>
+    </div>
+    <div class="linha">
+      <div class="jogador-bloco">
+        <a href="#" class="foto-link" title="Foto do Jogador 1">
+          <img src="https://i.pinimg.com/736x/80/05/58/8005582e8b79a9c1e8fc8d24d79e0fc6.jpg" alt="Foto do Jogador 1">
+        </a>
+        <div class="jogador">Jogador 1</div>
+      </div>
+      <div class="jogador-bloco">
+        <a href="#" class="foto-link" title="Foto do Jogador 2">
+          <img src="https://i.pinimg.com/736x/80/05/58/8005582e8b79a9c1e8fc8d24d79e0fc6.jpg" alt="Foto do Jogador 2">
+        </a>
+        <div class="jogador">Jogador 2</div>
+      </div>
+      <div class="jogador-bloco">
+        <a href="#" class="foto-link" title="Foto do Jogador 3">
+          <img src="https://i.pinimg.com/736x/80/05/58/8005582e8b79a9c1e8fc8d24d79e0fc6.jpg" alt="Foto do Jogador 3">
+        </a>
+        <div class="jogador">Jogador 3</div>
+      </div>
+      <div class="jogador-bloco">
+        <a href="#" class="foto-link" title="Foto do Jogador 4">
+          <img src="https://i.pinimg.com/736x/80/05/58/8005582e8b79a9c1e8fc8d24d79e0fc6.jpg" alt="Foto do Jogador 4">
+        </a>
+        <div class="jogador">Jogador 4</div>
+      </div>
+      <div class="jogador-bloco">
+        <a href="#" class="foto-link" title="Foto do Jogador 5">
+          <img src="https://i.pinimg.com/736x/80/05/58/8005582e8b79a9c1e8fc8d24d79e0fc6.jpg" alt="Foto do Jogador 5">
+        </a>
+        <div class="jogador">Jogador 5</div>
+      </div>
+      <div class="jogador-bloco">
+        <a href="#" class="foto-link" title="Foto do Jogador 6">
+          <img src="https://i.pinimg.com/736x/80/05/58/8005582e8b79a9c1e8fc8d24d79e0fc6.jpg" alt="Foto do Jogador 6">
+        </a>
+        <div class="jogador">Jogador 6</div>
+      </div>
+      <div class="jogador-bloco">
+        <a href="#" class="foto-link" title="Foto do Jogador 7">
+          <img src="https://i.pinimg.com/736x/80/05/58/8005582e8b79a9c1e8fc8d24d79e0fc6.jpg" alt="Foto do Jogador 7">
+        </a>
+        <div class="jogador">Jogador 7</div>
+      </div>
+      <div class="jogador-bloco">
+        <a href="#" class="foto-link" title="Foto do Jogador 8">
+          <img src="https://i.pinimg.com/736x/80/05/58/8005582e8b79a9c1e8fc8d24d79e0fc6.jpg" alt="Foto do Jogador 8">
+        </a>
+        <div class="jogador">Jogador 8</div>
+      </div>
+    </div>
   </div>
-
-  <script>
-    const pontos = {};
-
-    const linhas = document.querySelectorAll('#tabela-resultados tbody tr');
-    linhas.forEach(linha => {
-      const jogadorA = linha.cells[0].textContent.trim();
-      const placar = linha.cells[1].textContent.trim();
-      const jogadorB = linha.cells[2].textContent.trim();
-
-      const match = placar.match(/(\d+)\s*x\s*(\d+)/);
-      if (!match) return;
-      const pa = parseInt(match[1], 10);
-      const pb = parseInt(match[2], 10);
-
-      if (!(jogadorA in pontos)) pontos[jogadorA] = 0;
-      if (!(jogadorB in pontos)) pontos[jogadorB] = 0;
-
-      if (pa > pb) pontos[jogadorA] += 3;
-      else if (pa < pb) pontos[jogadorB] += 3;
-      else {
-        pontos[jogadorA] += 1;
-        pontos[jogadorB] += 1;
-      }
-    });
-
-    const classTable = document.getElementById('classificacao');
-    Object.entries(pontos)
-      .sort((a, b) => b[1] - a[1])
-      .forEach(([jogador, pontos]) => {
-        const row = document.createElement('tr');
-        row.innerHTML = `<td>${jogador}</td><td>${pontos}</td>`;
-        classTable.appendChild(row);
-      });
-  </script>
+<div class="rodape">
+    Gadelha Sinuca
+  </div>
 </body>
 </html>
