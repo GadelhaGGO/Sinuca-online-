@@ -1,0 +1,270 @@
+⁷<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Torneio em Pirâmide</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-image: url('https://i.pinimg.com/736x/55/49/33/55493328826135625b1bd25a76ff7b71.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      min-height: 100vh;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0,0,0,0.2);
+      z-index: -1;
+    }
+
+    .top-left {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      background-color: rgba(255, 255, 255, 0.85);
+      padding: 8px 12px;
+      border-radius: 8px;
+      z-index: 1000;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .top-left a {
+      margin-left: 5px;
+      text-decoration: none;
+      color: #1a73e8;
+      font-weight: bold;
+    }
+
+    .top-left a:hover {
+      text-decoration: underline;
+    }
+
+    .piramide {
+      text-align: center;
+      margin-top: 30px;
+      padding-bottom: 80px;
+    }
+    
+    .linha {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin: 12px 0;
+      flex-wrap: wrap;
+    }
+    
+    .jogador-bloco {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 80px;
+      transition: all 0.2s ease;
+    }
+    
+    .jogador-bloco:hover {
+      transform: translateY(-3px);
+    }
+    
+    .foto-link {
+      width: 52px;
+      height: 52px;
+      background: rgba(255,255,255,0.3);
+      border-radius: 50%;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      border: 2px solid rgba(255,255,255,0.5);
+      cursor: pointer;
+      box-sizing: border-box;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    
+    .foto-link:hover {
+      transform: scale(1.05);
+      border-color: rgba(255,255,255,0.8);
+    }
+    
+    .foto-link img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      display: block;
+    }
+    
+    .jogador {
+      width: 76px;
+      padding: 6px;
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 6px;
+      text-align: center;
+      font-size: 14px;
+      box-sizing: border-box;
+      color: #333;
+      font-weight: bold;
+      border: 1px solid rgba(0,0,0,0.1);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      backdrop-filter: blur(2px);
+    }
+    
+    .trofeu {
+      font-size: 48px;
+      color: gold;
+      margin: 15px 0;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    }
+    
+    .whatsapp-btn {
+      display: inline-block;
+      margin: 30px auto;
+      padding: 12px 24px;
+      background-color: #25D366;
+      color: white;
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: bold;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s;
+    }
+    
+    .whatsapp-btn:hover {
+      background-color: #128C7E;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+    
+    .rodape {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      padding: 10px 15px;
+      background-color: rgba(241, 241, 241, 0.9);
+      text-align: right;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      color: #000;
+      z-index: 1000;
+      font-weight: bold;
+    }
+    
+    @media (max-width: 600px) {
+      .piramide { margin-top: 15px; }
+      .jogador-bloco { width: 70px; }
+      .foto-link { width: 46px; height: 46px; }
+      .jogador { width: 66px; font-size: 12px; padding: 5px; }
+      .linha { gap: 6px; margin: 10px 0; }
+      .whatsapp-btn { padding: 10px 20px; font-size: 14px; margin: 20px auto; }
+      .top-left { font-size: 14px; padding: 6px 10px; }
+      .trofeu { font-size: 40px; margin: 10px 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="top-left">
+  <a href="https://gadelhaggo.github.io/Sala-trofeu-/" target="_blank" rel="noopener noreferrer">Torneios</a>
+</div>
+
+  <div class="piramide">
+    <div class="trofeu">🏆</div>
+    <div class="linha">
+      <div class="jogador-bloco">
+        <a href="#" class="foto-link" title="Foto do Finalista">
+          <img src="https://i.pinimg.com/736x/14/46/e4/1446e42ce695bf0e74f0a32ba2b1bf29.jpg" alt="Foto do Finalista">
+        </a>
+        <div class="jogador">Campeão</div>
+      </div>
+    </div>
+    <div class="linha">
+      <div class="jogador-bloco">
+        <a href="#" class="foto-link" title="Foto do Semi 1">
+          <img src="https://i.pinimg.com/736x/80/05/58/8005582e8b79a9c1e8fc8d24d79e0fc6.jpg" alt="Foto do Semi 1">
+        </a>
+        <div class="jogador">jogador AB</div>
+      </div>
+      <div class="jogador-bloco">
+        <a href="#" class="foto-link" title="Foto do Semi 2">
+          <img src="https://i.pinimg.com/736x/80/05/58/8005582e8b79a9c1e8fc8d24d79e0fc6.jpg" alt="Foto do Semi 2">
+        </a>
+        <div class="jogador">jogador CD</div>
+      </div>
+    </div>
+    <div class="linha">
+      <div class="jogador-bloco">
+        <a href="#" class="foto-link" title="Foto do Quartas 1">
+          <img src="https://i.pinimg.com/736x/80/05/58/8005582e8b79a9c1e8fc8d24d79e0fc6.jpg" alt="Foto do Quartas 1">
+        </a>
+        <div class="jogador">jogador A</div>
+      </div>
+      <div class="jogador-bloco">
+        <a href="#" class="foto-link" title="Foto do Quartas 2">
+          <img src="https://i.pinimg.com/736x/80/05/58/8005582e8b79a9c1e8fc8d24d79e0fc6.jpg" alt="Foto do Quartas 2">
+        </a>
+        <div class="jogador">jogador B</div>
+      </div>
+      <div class="jogador-bloco">
+        <a href="#" class="foto-link" title="Foto do Quartas 3">
+          <img src="https://i.pinimg.com/736x/80/05/58/8005582e8b79a9c1e8fc8d24d79e0fc6.jpg" alt="Foto do Quartas 3">
+        </a>
+        <div class="jogador">jogador C</div>
+      </div>
+      <div class="jogador-bloco">
+        <a href="#" class="foto-link" title="Foto do Quartas 4">
+          <img src="https://i.pinimg.com/736x/80/05/58/8005582e8b79a9c1e8fc8d24d79e0fc6.jpg" alt="Foto do Quartas 4">
+        </a>
+        <div class="jogador">jogador D</div>
+      </div>
+    </div>
+    <div class="linha">
+      <div class="jogador-bloco">
+        <a href="#" class="foto-link" title="Foto do Jogador 1">
+          <img src="https://i.pinimg.com/736x/80/05/58/8005582e8b79a9c1e8fc8d24d79e0fc6.jpg" alt="Foto do Jogador 1">
+        </a>
+        <div class="jogador">dupla A</div>
+      </div>
+      <div class="jogador-bloco">
+        <a href="#" class="foto-link" title="Foto do Jogador 2">
+          <img src="https://i.pinimg.com/736x/80/05/58/8005582e8b79a9c1e8fc8d24d79e0fc6.jpg" alt="Foto do Jogador 2">
+        </a>
+        <div class="jogador">dupla B</div>
+      </div>
+      <div class="jogador-bloco">
+        <a href="#" class="foto-link" title="Foto do Jogador 3">
+          <img src="https://i.pinimg.com/736x/80/05/58/8005582e8b79a9c1e8fc8d24d79e0fc6.jpg" alt="Foto do Jogador 3">
+        </a>
+        <div class="jogador">dupla C</div>
+      </div>
+      <div class="jogador-bloco">
+        <a href="#" class="foto-link" title="Foto do Jogador 4">
+          <img src="https://i.pinimg.com/736x/80/05/58/8005582e8b79a9c1e8fc8d24d79e0fc6.jpg" alt="Foto do Jogador 4">
+        </a>
+        <div class="jogador">dupla D</div>
+      </div>
+    </div>
+    
+    <a href="https://chat.whatsapp.com/EmdqlTa5bU5B72X3NSX5pM" class="whatsapp-btn" target="_blank">
+      Entrar no Grupo do WhatsApp
+    </a>
+  </div>
+  
+  <div class="rodape">
+    inscrição R$5,00
+  </div>
+</body>
+          </html>
